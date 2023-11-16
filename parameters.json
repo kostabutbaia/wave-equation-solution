@@ -1,0 +1,25 @@
+{   
+    "Solution_Name": "wave",
+    "Physical_Parameters": {
+        "fixed_end": false,
+        "speed_of_wave": 1
+    },
+    "Initial_Conditions": {
+        "Initial_Profile": {
+            "Inclination_of_wave": 1,
+            "Width_of_wave": 1,
+            "Init_pos": 5
+        },
+        "Initial_Speed": {
+            "psi_func": "0"
+        }
+    },
+    "Animation_Parameters": {
+        "FPS": 15,
+        "max_x": 10,
+        "num_x": 200,
+        "max_t": 10,
+        "num_t": 100,
+        "integral_step": 0.1
+    }
+}
