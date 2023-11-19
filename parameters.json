@@ -1,5 +1,5 @@
 {   
-    "Solution_Name": "wave",
+    "Solution_Name": "free-end-wave-speed",
     "Physical_Parameters": {
         "fixed_end": false,
         "speed_of_wave": 1
@@ -8,18 +8,27 @@
         "Initial_Profile": {
             "Inclination_of_wave": 1,
             "Width_of_wave": 1,
-            "Init_pos": 5
+            "init_pos": 5,
+
+            "use_custom": true,
+            "custom_phi_func": "0"
         },
         "Initial_Speed": {
-            "psi_func": "0"
+            "width": 1,
+            "height": 1,
+            "init_pos": 4.5,
+
+            "use_custom": false,
+            "custom_psi_func": "0"
         }
     },
     "Animation_Parameters": {
         "FPS": 15,
+        "graph_ylim": 3,
         "max_x": 10,
         "num_x": 200,
         "max_t": 10,
         "num_t": 100,
-        "integral_step": 0.1
+        "integral_step": 0.05
     }
 }

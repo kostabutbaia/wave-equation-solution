@@ -10,7 +10,7 @@ from params import *
 def create_anim_gif(name: str) -> None:
     fig = plt.figure()
     plt.xlim(-0.5, L)
-    plt.ylim(-h-2, h+2)
+    plt.ylim(-graph_ylim, graph_ylim)
     plt.grid()
     x_range, frames = get_wave_solution(L, num_x, max_t, num_t, speed, phi_func, psi_func, integral_step, fixed_end)
     l, = plt.plot([], [], 'k-')
