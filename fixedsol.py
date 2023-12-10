@@ -2,10 +2,7 @@ import numpy as np
 from utils import *
 from fourier import *
 
-a = 1
-L = 1
-
-def get_analytic_sol_at_t(t: float, x_range: list[float], sum_N: int, g, f) -> list[float]:
+def get_analytic_sol_at_t(t: float, x_range: list[float], sum_N: int, g, f, L, a) -> list[float]:
     return [
         partial_sum(sum_N,
                     lambda n: L/(n*np.pi*a),
@@ -21,9 +18,9 @@ def get_analytic_sol_at_t(t: float, x_range: list[float], sum_N: int, g, f) -> l
         for x in x_range
     ]
 
-def get_analytic_sol(x_range: list[float], t_range: list[float], sum_N: int, g, f):
+def get_analytic_sol(x_range: list[float], t_range: list[float], sum_N: int, g, f, L, a):
     return [
-        get_analytic_sol_at_t(t, x_range, sum_N, g, f)
+        get_analytic_sol_at_t(t, x_range, sum_N, g, f, L, a)
         for t in t_range
     ]
 
