@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import PillowWriter
 
 from fixedsol import get_analytic_sol
+from fixednum import get_num_sol
 
 # from params import *
 
@@ -20,10 +21,16 @@ def create_anim_gif(name: str) -> None:
     plt.xlim(0, L)
     plt.ylim(-3, 3)
     plt.grid()
-    x_range = np.linspace(0, L, 30)
-    t_range = np.linspace(0, 5, 400)
+    # x_range = np.linspace(0, L, 30)
+    # t_range = np.linspace(0, 5, 400)
+    # frames = get_analytic_sol(x_range, t_range, 5, g_func, f_func, L, a)
+
+    delta_t = 0.0125
+    delta_x = 0.033
+
+    x_range = np.arange(0, L, delta_x)
     
-    frames = get_analytic_sol(x_range, t_range, 5, g_func, f_func, L, a)
+    frames = get_num_sol(delta_x, delta_t, 5, 1, 1)
 
     l, = plt.plot([], [], 'k-')
     
@@ -36,4 +43,4 @@ def create_anim_gif(name: str) -> None:
 
 
 if __name__ == '__main__':
-    create_anim_gif('both-fixed')
+    create_anim_gif('both-fixed-num')
