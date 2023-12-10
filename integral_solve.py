@@ -1,20 +1,7 @@
 import numpy as np
 
-def partial_sum(N: int, *funcs):
-    return sum([np.prod([func(i) for func in funcs]) for i in range(1, N)])
-
-def get_func(func, x_range: list[float]) -> list[float]:
-    return [
-        func(x) for x in x_range
-    ]
-
-def get_func_ct(c: float, t: float, func, x_range: list[float]) -> list[float]:
-    return np.array([
-        func(x+c*t) for x in x_range
-    ])
-
 def riemman_sum_solve_integral(y_points: list[int], delta_x: int) -> int:
-    return delta_x * np.array(y_points[:-1]).sum()
+    return delta_x * y_points[:-1].sum()
 
 # Tests
 
